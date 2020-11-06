@@ -1,41 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Button, Container, Flex, Heading, NavLink } from "theme-ui";
-import netlifyIdentity from "netlify-identity-widget";
-import { useEffect } from "react";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
+import { IdentityContext } from "../../netlifyIdentityContext";
+import Navbar from "../components/Navbar";
 
 const Index = () => {
-  const [user, setUser] = useState(null);
-  useEffect(() => {
-    netlifyIdentity.init({});
-  }, []);
-
-  netlifyIdentity.on("login", (user) => {
-    netlifyIdentity.close();
-    setUser(user);
-  });
-
-  netlifyIdentity.on("logout", () => {
-    netlifyIdentity.close();
-    setUser(null);
-  });
+  const context = useContext(IdentityContext);
+  const user = context.user;
+  const netlifyIdentity = context.identity;
+  if (user) {
+    navigate("/app");
+  }
   return (
     <Container>
-      <Flex as="nav">
-        <NavLink as={Link} to="/" p={2}>
-          Home
-        </NavLink>
-        <NavLink as={Link} to="/app" p={2}>
-          Dashboard
-        </NavLink>
-        {user && <NavLink p={2}>
-          {user.user_metadata.full_name}
-        </NavLink>}
-      </Flex>
+      <Navbar/>
       <Flex sx={{ flexDirection: "column", padding: 3 }}>
         <Heading as="h1"> Todo App</Heading>
         <Button
-          sx={{ marginTop: 2 }}
+          sx={{ marginTop: 2, color: "black" }}
           onClick={() => {
             netlifyIdentity.open();
           }}
