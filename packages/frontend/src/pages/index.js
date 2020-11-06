@@ -3,7 +3,7 @@ import { Button, Container, Flex, Heading } from "theme-ui";
 import netlifyIdentity from "netlify-identity-widget";
 import { useEffect } from "react";
 
-const Index = () => {
+const index = () => {
   useEffect(() => {
     netlifyIdentity.init({});
   }, []);
@@ -24,4 +24,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default index;
