@@ -1,0 +1,12 @@
+{
+  "name": "eru-project12c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Translucent504/eru-project12c.git",
+  "author": "Shayaan Ahmed Farooqi <fleshlime.1@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ]
+}
