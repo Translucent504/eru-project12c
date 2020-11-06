@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/client": "^3.2.5",
     "@theme-ui/presets": "^0.3.0",
     "gatsby": "^2.25.3",
     "gatsby-plugin-create-client-paths": "^2.3.13",

@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import {Router, Link} from '@reach/router'
+import {Router} from '@reach/router'
 import { IdentityContext } from '../../netlifyIdentityContext'
 import Navbar from '../components/Navbar'
 import { navigate } from 'gatsby'
@@ -10,6 +10,8 @@ import { Heading } from 'theme-ui'
 const Dash = () => {
     const context = useContext(IdentityContext)
     const user = context.user
+    console.log(user.id)
+    console.log(user.user_metadata.full_name)
     return (
         <div>
             <Navbar/>

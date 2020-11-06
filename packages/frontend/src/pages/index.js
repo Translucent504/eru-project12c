@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { Button, Container, Flex, Heading, NavLink } from "theme-ui";
-import { Link, navigate } from "gatsby";
+import { Button, Container, Flex, Heading } from "theme-ui";
+import { navigate } from "gatsby";
 import { IdentityContext } from "../../netlifyIdentityContext";
 import Navbar from "../components/Navbar";
 
@@ -13,7 +13,7 @@ const Index = () => {
   }
   return (
     <Container>
-      <Navbar/>
+      <Navbar />
       <Flex sx={{ flexDirection: "column", padding: 3 }}>
         <Heading as="h1"> Todo App</Heading>
         <Button
