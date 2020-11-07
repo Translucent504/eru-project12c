@@ -1,0 +1,3 @@
+[build]
+    functions = "/packages/frontend/functions"
+    publish="/packages/frontend/public"
