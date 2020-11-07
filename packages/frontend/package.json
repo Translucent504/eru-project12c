@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "cd functions/todos && npm i",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
@@ -15,6 +16,7 @@
   "dependencies": {
     "@apollo/client": "^3.2.5",
     "@theme-ui/presets": "^0.3.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.25.3",
     "gatsby-plugin-create-client-paths": "^2.3.13",
     "netlify-identity-widget": "^1.9.1",

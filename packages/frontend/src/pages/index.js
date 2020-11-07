@@ -3,6 +3,7 @@ import { Button, Container, Flex, Heading } from "theme-ui";
 import { IdentityContext } from "../../netlifyIdentityContext";
 import Navbar from "../components/Navbar";
 
+
 const Index = () => {
   const context = useContext(IdentityContext);
   const user = context.user;
