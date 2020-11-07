@@ -1,4 +1,3 @@
-import { navigate } from "gatsby";
 import React, { useContext } from "react";
 import { Button, Container, Flex, Heading } from "theme-ui";
 import { IdentityContext } from "../../netlifyIdentityContext";
@@ -8,9 +7,6 @@ const Index = () => {
   const context = useContext(IdentityContext);
   const user = context.user;
   const netlifyIdentity = context.identity;
-  if(user){
-    navigate('/app')
-  }
   return (
     <Container>
       <Navbar />

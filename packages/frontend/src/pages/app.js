@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Router } from "@reach/router";
 import { IdentityContext } from "../../netlifyIdentityContext";
 import Navbar from "../components/Navbar";
-import { navigate } from "gatsby";
 import { Box, Button, Container, Flex, Heading, Input, Label } from "theme-ui";
 import { gql, useMutation, useQuery } from "@apollo/client";
 import Todo from "../components/Todo";
@@ -109,9 +108,6 @@ const Dash = () => {
 const App = () => {
   const context = useContext(IdentityContext);
   const user = context.user;
-  if (!user) {
-    navigate("/");
-  }
   return <Router>{user && <Dash path="/app" />}</Router>;
 };
 
