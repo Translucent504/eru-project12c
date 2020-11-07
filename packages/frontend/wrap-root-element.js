@@ -4,14 +4,16 @@ const { light } = require("@theme-ui/presets");
 const { Provider } = require("./netlifyIdentityContext");
 const { ApolloProvider } = require("@apollo/client");
 const fetch = require("cross-fetch");
-import { ApolloClient, InMemoryCache, HttpLink } from "@apollo/client";
+const { ApolloClient, InMemoryCache, HttpLink } = require("@apollo/client");
 
-export const client = new ApolloClient({
+const client = new ApolloClient({
   link: new HttpLink({
-    uri: "https://eru-todos.netlify.app/.netlify/functions/todos",
+    uri: "/.netlify/functions/todos",
     fetch,
   }),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache({
+    addTypename: false
+  }),
 });
 
 const newTheme = {
