@@ -24,22 +24,6 @@ const typeDefs = gql`
   }
 `;
 
-const users = [
-  {
-    email: "padoo@padoo.com",
-    full_name: "Shayaan Farooqi",
-    todos: [
-      {
-        content: "Todo task 1",
-        completed: false,
-      },
-      {
-        content: "Todo task 2",
-        completed: false,
-      },
-    ],
-  },
-];
 
 const resolvers = {
   Query: {

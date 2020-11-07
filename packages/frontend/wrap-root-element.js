@@ -4,6 +4,7 @@ const { light } = require("@theme-ui/presets");
 const { Provider } = require("./netlifyIdentityContext");
 const { ApolloProvider } = require("@apollo/client");
 const fetch = require("cross-fetch");
+
 const { ApolloClient, InMemoryCache, HttpLink } = require("@apollo/client");
 
 const client = new ApolloClient({
