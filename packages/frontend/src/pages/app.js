@@ -108,7 +108,10 @@ const Dash = () => {
 const App = () => {
   const context = useContext(IdentityContext);
   const user = context.user;
-  return <Router>{user && <Dash path="/app" />}</Router>;
+  return (<>
+  <Router>{user && <Dash path="/app" />}</Router>
+  {!user && <h1 style={{fontSize:"4rem"}}>Login to View Todos Dashboard</h1>}
+  </>)
 };
 
 export default App;
